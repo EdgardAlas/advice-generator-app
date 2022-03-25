@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap');
+:root {
+  /* Primary */
+  --light-cyan: hsl(193, 38%, 86%);
+  --neon-green: hsl(150, 100%, 66%);
+
+  /* Neutral */
+  --grayish-blue: hsl(217, 19%, 38%);
+  --dark-grayish-blue: hsl(217, 19%, 24%);
+  --dark-blue: hsl(218, 23%, 16%);
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Overpass', sans-serif;
+}
+
+body {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  margin: 0;
+  min-height: 100vh;
+  padding: 0;
+  padding: 2rem;
+  background-color: var(--dark-blue);
+  color: var(--light-cyan);
+  font-family: 'Manrope', sans-serif;
+  gap: 3rem;
+}
+
+.card {
+  border-radius: 0.75rem;
+  background-color: var(--dark-grayish-blue);
+  max-width: 400px;
+  min-width: 250px;
+  padding: 2rem;
+}
+
+.card__title {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  color: var(--neon-green);
+  letter-spacing: 7px;
+  text-align: center;
+}
+
+.card__text {
+  font-size: 28px;
+  text-align: center;
+  quotes: '“' '”' '‘' '’';
+}
+
+.card__text::before {
+  content: open-quote;
+}
+.card__text::after {
+  content: close-quote;
+}
+
+.separator {
+  height: 1rem;
+  background-image: url('../images/pattern-divider-mobile.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.card__footer {
+  position: relative;
+  height: 1rem;
+}
+
+.card__next {
+  position: absolute;
+  background-color: var(--neon-green);
+  border: none;
+  height: 50px;
+  width: 50px;
+  border-radius: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(50%);
+  transition: box-shadow 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card__next:hover {
+  box-shadow: 0px 0px 10px var(--neon-green);
+}
+
+.card__next img {
+  width: 65%;
+}
+
+@media only screen and (min-width: 768px) {
+  .separator {
+    background-image: url('../images/pattern-divider-desktop.svg');
+  }
+}
